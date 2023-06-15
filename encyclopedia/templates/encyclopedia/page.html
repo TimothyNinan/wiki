@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+    {% autoescape off %}
+        {{ text }}
+    {% endautoescape %}
+    <div>
+        <form action="/{{ title }}" method="POST">
+            <input type="hidden" name="title" value="{{ title }}">
+            <input type="submit" class="btn btn-outline-dark" value="Edit {{ title }} Entry">
+        </form>
+    </div>
+{% endblock %}

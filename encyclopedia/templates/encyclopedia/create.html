@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create New Page
+{% endblock %}
+
+{% block body %}
+    <form style="padding-left: 20px;" method="POST" action="{% url 'create' %}">
+        <div class="form-group">
+            <label for="title"><h4>Title:</h4></label>
+            <input style="width:50%;" name="title"  class="form-control" id="title" type="text">
+        </div>
+        <div class="form-group">
+            <label for="entry"><h4>Entry:</h4></label>
+            <textarea style="width:75%;" name="entry" id="entry" class="form-control" name="entry" cols="20" rows="15"></textarea>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-outline-dark" type="submit" value="Create New Page">
+        </div>
+    </form>
+{% endblock %}
